@@ -1,0 +1,33 @@
+{% extends 'index.html'%}
+
+{% block content %}
+<div class="container p-4">
+
+    <table class="table table-hover   ">
+        <thead >
+          <tr>
+            
+            <th scope="col">Medicine Name</th>
+            <th scope="col">Views</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        {% for x in medicine %}
+          <tr>
+            <td>{{x.medicine_name}}</td>
+            <td><a href="{% url 'Viewmedicine' x.id  %}" class="btn btn-outline-warning">Views</a></td>
+          </tr>
+        {% endfor %}
+          
+         
+        </tbody>
+      </table>
+      <a href="{% url 'addmedicine'  %}" class="btn btn-primary w-100" >Create Medicine</a>
+
+</div>
+
+
+
+
+{% endblock %}

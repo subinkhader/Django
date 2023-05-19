@@ -1,0 +1,49 @@
+{% extends 'index.html'%}
+
+{% block content %}
+
+
+<div class="container-fluid bg-dark d-flex align-items-center justify-content-center" style='height : 100vh'>
+    <div class="outer card w-50 p-3 ">
+        <h3 class="heading">Create Medicine</h3>
+
+        <form method="post" action="Addmedicine" class="p-1">
+            {% csrf_token %}
+            <div class="form-outline mb-3">
+                <label class="form-label" for="form1Example13">
+                    Medicine Name
+                </label>
+                <input type="text" name="medicinename" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-outline mb-3">
+                <label class="form-label" for="form1Example13">
+                    Company Name
+                </label>
+                <input type="text" name="companyname" class="form-control form-control-lg" />
+            </div>
+            <div class="form-outline mb-3">
+                <label class="form-label" for="form1Example13">
+                    Date
+                </label>
+                <input type="date" name="date" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-outline mb-3">
+                <label class="form-label" for="form1Example13">
+                    Amount
+                </label>
+                <input type="number" name="amount" class="form-control form-control-lg" />
+            </div>
+
+
+
+            <button type="submit" class="btn btn-outline-primary">
+                Add Medicine
+            </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

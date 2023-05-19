@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 20rem;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="card-body">
+                <h3 class="card-title fw-bold">Medicine Name : {{medicine.medicine_name}}</h3>
+                <h4 class="card-subtitle mb-2 fw-bold">Company Name : {{medicine.company_name}}</h4>
+                <h5 class="card-text fw-bold">Date : {{medicine.date}}</h5>
+                <h6 class="card-text text fw-bold">Amount : {{medicine.amount}}</h6>
+                <div class="p-3">
+                    <a href="{% url 'Editmedicine' medicine.id  %}" class="btn btn-outline-primary">Update</a>
+                    <a href="{% url 'Deletemedicine' medicine.id  %}" class="btn btn-outline-danger">Delete</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
